@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Portfolio</title>
+  <link rel="stylesheet" href="stylie.css">
+</head>
+
+<body>
+  <!-- MAIN PAGE -->
+  <section id="main-page" class="main-page">
+    <div class="main-container">
+      <h1>WELCOME TO OUR GROUP PORTFOLIO</h1>
+      <p>EXPLORE OUR PROFILES AND LEARN MORE ABOUT OUR SKILLS, HOBBIES, AND ASPIRATIONS AS BSIT STUDENTS.</p>
+      <button onclick="showProfiles()">View Profiles</button>
+    </div>
+  </section>
+
+  <!-- PROFILES PAGE -->
+  <section id="profiles-page" class="hidden">
+    <header>
+      <h1>MEET OUR GROUP MEMBERS</h1>
+
+      <nav class="profile-nav">
+        <button onclick="showProfile('justin')">JUSTIN</button>
+        <button onclick="showProfile('MATT')">MATT</button>
+        <button onclick="goHome()">Home</button>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- JUSTIN -->
+      <div class="profile-box" id="justin">
+        <div class="profile-header">
+          <img src="90.jpg" alt="Justin Verceles">
+          <div class="info">
+            <h2>JUSTIN VERCELES</h2>
+            <small>SEPTEMBER 8, 2005</small>
+            <p class="contact">
+              📧 <strong>Email:</strong> justinverceles@gmail.com <br>
+              ☎️ <strong>Contact:</strong> 0912-345-6789 <br>
+              📍 <strong>Address:</strong> BINALONAN, PANGASINAN
+            </p>
+          </div>
+        </div>
+
+        <p>I love coding, creating simple programs, and learning new programming languages like VB.NET and HTML.</p>
+        <p>My name is Justin Verceles, and I’m a BSIT student who dreams of becoming a software developer. I enjoy solving problems, building projects, and exploring new technologies. During my free time, I play games, watch tutorials, and practice short coding challenges to improve my skills.</p>
+
+        <div class="skills-section">
+          <h3>💻 Skills</h3>
+          <ul>
+            <li>CHATGPT</li>
+            <li>VB.NET PROGRAMMING</li>
+            <li>HTML & CSS WEB DESIGN</li>
+            <li>BASIC SQL & DATABASE HANDLING</li>
+            <li>PROBLEM SOLVING AND DEBUGGING</li>
+          </ul>
+
+          <h3>🎮 Hobbies</h3>
+          <ul>
+            <li>RELAPSE</li>
+            <li>GAMING</li>
+            <li>CODING PRACTICE</li>
+            <li>LISTENING TO MUSIC</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MATT -->
+      <div class="profile-box" id="MATT">
+        <div class="profile-header">
+          <img src="01.jpg" alt="Matt">
+          <div class="info">
+            <h2>MATT VILLENA</h2>
+            <small>September 21, 2005</small>
+            <p class="contact">
+              📧 <strong>Email:</strong> MATTVILLENA@gmail.com <br>
+              ☎️ <strong>Contact:</strong> 0998-765-4321 <br>
+              📍 <strong>Address:</strong> ALCALA PANGASINAN
+            </p>
+          </div>
+        </div>
+
+        <p>I love exploring technology, learning new programming languages, and improving my skills in web development and design.</p>
+        <p>My name is Matt Villena, and I’m a BSIT student who aims to become a skilled programmer and IT professional. I enjoy creating simple projects, discovering new tools, and enhancing my creativity through coding. During my free time, I play games, take photos of my dogs, and learn new things that help me grow as a student and developer.</p>
+
+        <div class="skills-section">
+          <h3>💡 Skills</h3>
+          <ul>
+            <li>PHOTOGRAPHY & PHOTO EDITING</li>
+            <li>CHATGPT</li>
+            <li>VB.NET PROGRAMMING</li>
+            <li>HTML & CSS WEB DESIGN</li>
+            <li>BASIC SQL & DATABASE HANDLING</li>
+            <li>PROBLEM SOLVING AND DEBUGGING</li>          
+          </ul>
+
+          <h3>🐶 Hobbies</h3>
+          <ul>
+            <li>RELAPSE</li>
+            <li>TAKING PICTURES</li>
+            <li>LISTENING TO MUSIC</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function showProfiles() {
+      document.getElementById('main-page').classList.add('hidden');
+      document.getElementById('profiles-page').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goHome() {
+      document.getElementById('profiles-page').classList.add('hidden');
+      document.getElementById('main-page').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showProfile(id) {
+      document.querySelectorAll('.profile-box').forEach(box => box.style.display = 'none');
+      const selected = document.getElementById(id);
+      selected.style.display = 'block';
+      selected.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    window.onload = () => {
+      document.querySelectorAll('.profile-box').forEach(box => box.style.display = 'none');
+    };
+  </script>
+</body>
+</html>
